@@ -1,9 +1,8 @@
 package ua.com.owu.servlet.connect;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DbConnection {
     private String  url="jdbc:mysql://localhost:3306/db1600";
@@ -37,8 +36,27 @@ public  void save(String username){
             e1.printStackTrace();
         }
     }
-
-
 }
 
+    public List<String> selectAll(){
+    List<String> users = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT *FROM USER");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                 String id = resultSet.getString(0);
+                 String name = resultSet.getString(1);
+                 String user = id + " " + name;
+                users.add(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try {
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return users;
+    }
 }
