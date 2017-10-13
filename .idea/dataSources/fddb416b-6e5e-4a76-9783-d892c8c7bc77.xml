@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="bank">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="db1600"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="people_city_profession"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="sakila"/>
+    <schema id="9" parent="1" name="sys"/>
+    <schema id="10" parent="1" name="test"/>
+    <schema id="11" parent="1" name="university"/>
+    <schema id="12" parent="1" name="world"/>
+    <table id="13" parent="2" name="application"/>
+    <table id="14" parent="2" name="client"/>
+    <table id="15" parent="2" name="department"/>
+    <table id="16" parent="2" name="people"/>
+    <column id="17" parent="13" name="idApplication">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="13" name="Sum">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="19" parent="13" name="CreditState">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="20" parent="13" name="Currency">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="21" parent="13" name="Client_idClient">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="22" parent="13" name="fk_Application_Client1_idx">
+      <ColNames>Client_idClient</ColNames>
+    </index>
+    <key id="23" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idApplication</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="24" parent="13" name="fk_Application_Client1">
+      <ColNames>Client_idClient</ColNames>
+      <RefSchemaName>bank</RefSchemaName>
+      <RefTableName>client</RefTableName>
+      <RefColNames>idClient</RefColNames>
+    </foreign-key>
+    <column id="25" parent="14" name="idClient">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="14" name="FirstName">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="27" parent="14" name="LastName">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="28" parent="14" name="Education">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="29" parent="14" name="Passport">
+      <Position>5</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="30" parent="14" name="City">
+      <Position>6</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="31" parent="14" name="Age">
+      <Position>7</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="32" parent="14" name="Department_idDepartment">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="33" parent="14" name="fk_Client_Department_idx">
+      <ColNames>Department_idDepartment</ColNames>
+    </index>
+    <key id="34" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idClient</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="35" parent="14" name="fk_Client_Department">
+      <ColNames>Department_idDepartment</ColNames>
+      <RefSchemaName>bank</RefSchemaName>
+      <RefTableName>department</RefTableName>
+      <RefColNames>idDepartment</RefColNames>
+    </foreign-key>
+    <column id="36" parent="15" name="idDepartment">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="15" name="DepartmentCity">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="38" parent="15" name="CountOfWorkers">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <key id="39" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>idDepartment</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="40" parent="16" name="key1">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="16" name="field1">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="42" parent="16" name="field2">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="43" parent="16" name="key2">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="16" name="key3">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="45" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>key1</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

@@ -1,4 +1,6 @@
-package ua.com.owu.servlet;
+package ua.com.owu.servlet.servlet;
+
+import ua.com.owu.servlet.connect.DbConnection;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +12,19 @@ import java.io.IOException;
 @WebServlet(name = "UserServlet")
 public class UserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getParameter("name");
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
+
+        String name = request.getParameter("name");
+        DbConnection dbConnection =new DbConnection();
+        dbConnection.save(name);
+
         System.out.println(request.getParameter("name"));
         request.getRequestDispatcher("/WEB-INF/pages/welcome.jsp").forward(request,response);
 
