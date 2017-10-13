@@ -17,6 +17,7 @@
     <servlet-mapping>
         <servlet-name>UserServlet</servlet-name>
         <url-pattern>/next</url-pattern>
+        <url-pattern>/save</url-pattern>
     </servlet-mapping>
 
 

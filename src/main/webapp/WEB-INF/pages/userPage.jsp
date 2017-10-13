@@ -12,5 +12,11 @@
 </head>
 <body>
 User Page
+<form action="/save" method="post">
+    <input type="text" name="name">
+    <input type="submit" value="save">
+
+
+</form>
 </body>
 </html>

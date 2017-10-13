@@ -10,6 +10,9 @@ import java.io.IOException;
 @WebServlet(name = "UserServlet")
 public class UserServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getParameter("name");
+        System.out.println(request.getParameter("name"));
+        request.getRequestDispatcher("/WEB-INF/pages/welcome.jsp").forward(request,response);
 
     }
 
