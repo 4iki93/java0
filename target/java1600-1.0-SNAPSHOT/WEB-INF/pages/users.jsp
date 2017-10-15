@@ -11,11 +11,10 @@ Users page
 
 
 ${userList}
-<%--
 <c:forEach items="${userList}" var="user">
     <c:out value="${user}"/>
     <br>
-</c:forEach>--%>
+</c:forEach>
 
 </body>
 </html>

@@ -26,9 +26,9 @@
         <servlet-name>NextServlet</servlet-name>
         <servlet-class>ua.com.owu.servlet.servlet.NextServlet</servlet-class>
     </servlet>
-<servlet-mapping>
-    <servlet-name>NextServlet</servlet-name>
-    <url-pattern>/allUsers</url-pattern>
-</servlet-mapping>
+    <servlet-mapping>
+            <servlet-name>NextServlet</servlet-name>
+            <url-pattern>/allUsers</url-pattern>
+    </servlet-mapping>
 
 </web-app>
